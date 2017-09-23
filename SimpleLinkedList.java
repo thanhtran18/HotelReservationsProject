@@ -10,7 +10,7 @@ public class SimpleLinkedList extends ListItem
 {
 	
 	private Node head; //first node in the list
-	private int size; //number of elements in this list
+	private int size;  //number of elements in this list
 	
 	//------------------------------------------------------
 	// SimpleLinkedList Constructor
