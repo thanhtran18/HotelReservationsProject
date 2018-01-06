@@ -1,7 +1,7 @@
 //-----------------------------------------
 // CLASS: BaseEntity
 //
-// Author: Gabriel Faucher
+// Author: Cong Thanh Tran
 //
 // REMARKS: A base class grouping what is common in the data classes of this project  
 //
@@ -20,7 +20,6 @@ public class BaseEntity extends SearchableOrderedItem {
 	// PARAMETERS: 
 	//		int: default integer identifier for this entity
 	//		String: default String identifier for this entity
-	// Returns: None
 	//------------------------------------------------------
 	BaseEntity(int id, String name) {
 		this.id = id;
@@ -31,18 +30,19 @@ public class BaseEntity extends SearchableOrderedItem {
 	// compareTo (implements)
 	//
 	// PURPOSE:	compares the "id" members of two BaseEntitys by calling "getId()".
-	//			Provides default implementation of a required method.
-	//			This method can be overriden in a subclass as necessary.
 	// PARAMETERS:
 	//		OrderedItem: the OrderedItem to compare to this
 	// Returns:
 	//		int: a negative integer, zero, or a positive integer if this object is, respectively, less than, equal to, or greater than the specified object.
 	//------------------------------------------------------
-	public int compareTo(OrderedItem other){
+	public int compareTo(OrderedItem other)
+    {
 		//check type
 		int compareResult = 0;
-		if (other instanceof BaseEntity) compareResult = getId() - ((BaseEntity)other).getId();
-		else (new InvalidObjectTypeError("BaseEntity.compareTo()", other.getClass().getCanonicalName(), "BaseEntity")).throwError();
+		if (other instanceof BaseEntity)
+			compareResult = getId() - ((BaseEntity)other).getId();
+		else
+		    (new InvalidObjectTypeError("BaseEntity.compareTo()", other.getClass().getCanonicalName(), "BaseEntity")).throwError();
 		
 		return compareResult;
 	}
@@ -61,8 +61,6 @@ public class BaseEntity extends SearchableOrderedItem {
 	// getKey (implements)
 	//
 	// PURPOSE:	returns the name value for this object by calling "getName()".
-	//			Provides default implementation of a required method.
-	//			This method can be overriden in a subclass as necessary.
 	// PARAMETERS: none
 	// Returns:
 	//		String: the key value (name field) for this object
